@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- LYRICS.HTML HERE -->
+{% endblock %}
+
+{% block form %}
+
+
+<form action="/lyrics" method="POST">
+<div class="active-purple-4 mb-4 text-muted">
+	<h5> paste text here: </h5>
+  <input class="form-control" type="text" placeholder="" aria-label="Search" name="artist">
+  <br>
+  <input type="submit" value="Submit">
+</div>
+</form>
+
+
+<style>
+	.active-purple-4 input[type=text]:focus:not([readonly]) {
+	border: 1px solid #ce93d8;
+	box-shadow: 0 0 0 1px #ce93d8;
+	}
+</style>
+{% endblock %}
+
+
+<!-- <form action="/lyrics" method="POST">
+	Enter text: <br>
+	<input type="text" name="artist"><br>
+	<br>
+	<input type="submit" value="Submit">
+</form>
+ -->
