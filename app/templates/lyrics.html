@@ -2,10 +2,8 @@
 
 {% block content %}
 
- <div class = "row col-sm-12">
-<span id="typed"></span>
-</div>
 
+<span id="typed"></span>
 
 <script>
 
@@ -18,43 +16,16 @@
 
     var typed = new Typed('#typed', {
       strings: [lyrics_with_breaks],
-      typeSpeed: -10000,
+      typeSpeed: 5,
       smartBackspace: true,
       cursorChar: "",
   });
 
-// window.onload = function () {
-// 	// add possible characters to each substirng
-// 	var possible = "-+*/|}{[]~\\\":;?/.><=+-_)(*&^%$#@!)}";
-// 	var possible = possible.split("");
-// 	var list_of_strings = [];
-// 	var growing_string = ""
-// 	var i = 0;
-// 	while (i < lyrics_with_breaks.length) {
-// 		if (lyrics_with_breaks.charAt(i) == '"') {
-// 			if (lyrics_with_breaks.substring(i, i+7) == "<br>") {
-// 				i += 6;
-// 				list_of_strings.concat("<br>");
-// 			}
-// 		} else {
-
-// 		// get random characters
-// 		random = possible.sort(() => 0.5 - Math.random());
-// 		let selected = random.slice(0,lyrics_with_breaks.length - i);
-
-// 		string = lyrics_with_breaks.substr(0, i) + selected;
-// 		list_of_strings.push(string);
-// 		i += 1;
-// 		}
-
-// 	}
-// 	list_of_strings[-1] = list_of_strings[-1] + "; &copy;";
 
 
-// 	console.log(list_of_strings);
-// 	console.log(lyrics_with_breaks)
-
-
+var colors = ['#39CCCC', '#0074D9', '#F012BE', '#B10DC9'];
+var random_color = colors[Math.floor(Math.random() * colors.length)];
+document.getElementById('typed').style.color = random_color;
 
 </script> 
 

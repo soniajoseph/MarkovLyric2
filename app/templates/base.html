@@ -12,7 +12,7 @@
     <link rel="icon" href="../../favicon.ico">
     <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/jumbotron-narrow/">
 
-    <title>Generate text</title>
+    <title>Generate lyrics</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
 
 				    <div class="w-100 dual-collapse2 row">
 				        <ul class="navbar-nav mr-auto">
-						<h3> generate text </h3>
+						<h3> generate lyrics </h3>
 				        </ul>
 				    </div>
 				   <div class="navbar-header navbar-right pull-right">
@@ -72,25 +72,19 @@
 
 
 <!-- CONTENT -->
-		<div class = "container" style="overflow:hidden; height:70%;">
-			<div class = "row"> </div>
-				<div class = "container row content-wrapper py-4" style="height:60%;">
+		<div class = "container" style= "height:100%;">
+
+			<div class = "row"> 
+
+				<div class = "col-8 py-4 content-wrapper" style="height:100%;">
 			      	{% block content %}
 			        {% endblock %}
 			    </div>
 
-
-			    <div class = "container row fixed-row-bottom form bg-white">
-			    	<br>
+			    <div class = "col-4 form bg-white py-4">
 			      	{% block form %}
 			        {% endblock %}
 			    </div>
-
-			    <div class = "container row footer text-muted bg-transparent">
-			    	<a>&copy; sonia joseph
-			    	<br> <br>
-			    </a>
-				</div>
 
 			</div>
 
@@ -106,27 +100,17 @@
 html, body {
 	height: 100%;
 }
+
 .content-wrapper {
-	position: absolute;
-    overflow-y: auto;
+/*	position: absolute;
+*/    overflow-y: auto;
 }
-.fixed-row-bottom { 
-	position: absolute; 
-	bottom: 40px;
+
 }
-.footer { 
-	position: absolute;
-	bottom: 0px;
-}
+
 p, span {
-  color: black;
-  fontSize: 35px;
-  lineHeight: 36px;
-  textAlign: center;
-  font-family: "Courier New";
-  letterSpacing: 1.2em;
-  paddingLeft: 1.2em;
-  font-weight: 600;
+  fontSize: 50px;
+
 }
 </style>
 
