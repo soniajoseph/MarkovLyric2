@@ -3,7 +3,7 @@
 
 Based off an [old college assignment](https://www.cs.princeton.edu/courses/archive/fall15/cos126/assignments/markov.html), this project uses basic natural language processing to generate semi-plausible text.
 
-{% include figure image_path="/assets/images/posts/britney.png" alt="text generation with Markov chains for Britney Spears lyrics" caption="Britney Spears text generation, my original inspiration." %}
+![Britney Spears text generation."]("/assets/images/posts/britney.png")
 
 ## Markov Chains
 
