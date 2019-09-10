@@ -13,7 +13,7 @@ When generating text, the algorithm looks at the current k-gram and selects a ra
 
 The algorithm incorporates the character into the next k-gram and repeats the process.
 
-This algorithm is called a Markov chain and produces long-strings of semi-believable text.
+Called a Markov chain, the algorithm produces long strings of semi-believable text.
 
 Try it out for yourself with [text](https://generatetext.herokuapp.com/) or [lyrics](https://generatelyrics.herokuapp.com/).
 
