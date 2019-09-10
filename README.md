@@ -26,5 +26,5 @@ Because the output was especially amusing for song lyrics, I connected it to the
 
 For Lyric Generator, you enter the name of an artist. The algorithm scrapes the artist's 10 most popular songs from RapGenius and produces a pseudo-random song.
 
-The GitHub repos for the text generator, without the RapGenius API, is [here](https://github.com/soniajoseph/MarkovLyric).
+The GitHub repo for the text generator, without the RapGenius API, is [here](https://github.com/soniajoseph/MarkovLyric).
 
