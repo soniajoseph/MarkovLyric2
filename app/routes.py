@@ -38,7 +38,7 @@ def lyrics():
 		total_lyrics = "".join(s for s in total_lyrics)
 
 		model = MarkovModel()
-		lyrics = model.textGenerator(total_lyrics, 5, 1000)
+		lyrics = model.textGenerator(total_lyrics, 10, 1000)
 		lyrics = model.stringLyrics(lyrics)
 
 		# add line breaks
