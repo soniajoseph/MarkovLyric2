@@ -1,38 +1,30 @@
-# node-js-sample
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+# Find the lyric generator [here](https://generatelyrics.herokuapp.com/). A text generator, which is not connected to the RapGenius API, is [here](https://generatetext.herokuapp.com/).
 
-## Running Locally
+Based off an [old college assignment](https://www.cs.princeton.edu/courses/archive/fall15/cos126/assignments/markov.html), this project uses basic natural language processing to generate semi-plausible text.
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+{% include figure image_path="/assets/images/posts/britney.png" alt="text generation with Markov chains for Britney Spears lyrics" caption="Britney Spears text generation, my original inspiration." %}
 
-```sh
-git clone git@github.com:heroku/node-js-sample.git # or clone your own fork
-cd node-js-sample
-npm install
-npm start
-```
+## Markov Chains
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+The algorithm divides the input text into k-grams, and for each k-gram, forms a frequency table for the following character.
 
-## Deploying to Heroku
+When generating text, the algorithm looks at the current k-gram and selects a random character based off the weighted distribution of the frequency table.
 
-```
-heroku create
-git push heroku master
-heroku open
-```
+The algorithm incorporates the character into the next k-gram and repeats the process.
 
-Alternatively, you can deploy your own copy of the app using the web-based flow:
+This algorithm is called a Markov chain and produces long-strings of semi-believable text.
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+Try it out for yourself with [text](https://generatetext.herokuapp.com/) or [lyrics](https://generatelyrics.herokuapp.com/).
 
-## Documentation
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+## Project Design
 
-- [10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+I coded the Markov chain in Python and hosted it on Heroku with the Flask micro web framework. I wrote a CSS/HTML/JavaScript GUI to mimic the effect of the Terminal when originally testing the algorithm. For the animation I used the [Typed.js library](https://github.com/mattboldt/typed.js/).
+
+Because the output was especially amusing for song lyrics, I connected it to the [RapGenius API](https://genius.com/developers). 
+
+For Lyric Generator, you enter the name of an artist. The algorithm scrapes the artist's 10 most popular songs from RapGenius and produces a pseudo-random song.
+
+The GitHub repos for the text generator, without the RapGenius API, is [here](https://github.com/soniajoseph/MarkovLyric).
+
