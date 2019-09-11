@@ -46,7 +46,7 @@ def lyrics():
 		lyrics = model.stringLyrics(lyrics)
 
 		# add line breaks
-		lyrics = str(artist) + '\n' + lyrics.split('\n')
+		lyrics = lyrics.split('\n')
 
 		return render_template('lyrics.html', lyrics=lyrics)
 
