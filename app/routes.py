@@ -51,5 +51,5 @@ def lyrics():
 		return render_template('lyrics.html', lyrics=lyrics)
 
 	except:
-		return render_template('error.html', message="Enter some text to start generating.")
+		return render_template('error.html', message="Enter a valid artist's name to start generating.")
 
