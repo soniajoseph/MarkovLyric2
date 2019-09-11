@@ -19,6 +19,7 @@ def lyrics():
 	try: 
 		# # Uncomment for RapGenius API
 		# # get artist
+
 		artist = request.form['artist']
 		genius = lyricsgenius.Genius("Y_izF-J78Qf8qn1gqLTWyKj95b_sJuQwj7f4smPQq7zB1qnMp3mJ71jpB2tBu0Bb")
 
@@ -28,8 +29,11 @@ def lyrics():
 		genius.skip_non_songs = True # Include hits thought to be non-songs (e.g. track lists)
 		genius.excluded_terms = ["(Remix)", "(Live)"] # Exclude songs with these words in their title
 
+		try:
+			artist = genius.search_artist(artist, max_songs=8, sort="popularity")
+		except:
+			render_template('error.html', message="Artist not found.")
 
-		artist = genius.search_artist(artist, max_songs=8, sort="popularity")
 
 		# join lyrics into one document
 		total_lyrics = []
@@ -42,7 +46,7 @@ def lyrics():
 		lyrics = model.stringLyrics(lyrics)
 
 		# add line breaks
-		lyrics = lyrics.split('\n')
+		lyrics = str(artist) + '\n' + lyrics.split('\n')
 
 		return render_template('lyrics.html', lyrics=lyrics)
 

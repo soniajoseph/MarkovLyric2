@@ -1,8 +1,149 @@
-{% extends "base.html" %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-{% block content %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/jumbotron-narrow/">
 
-How do I work? 
-<i> Coming soon. </i>
+    <title>Generate text</title>
 
-{% endblock %}
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--  script for typed --> 
+ 	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  </head>
+
+  <body>
+    <div class="container" style="height:100%;">
+
+<!-- NAVIGATION BAR -->
+    	<div class="container">
+	      	<div class="header clearfix" style="height:30%;">
+				<nav class="navbar navbar-expand navbar-light">
+
+				    <div class="w-100 dual-collapse2 row">
+				        <ul class="navbar-nav mr-auto">
+						<h3> generate text </h3>
+				        </ul>
+				    </div>
+				   <div class="navbar-header navbar-right pull-right">
+				        <ul class="navbar-nav ml-auto">
+				            <li class="nav-item">
+				                <a class="nav-link" href="index">home</a>
+				            </li>
+				            <li class="nav-item">
+				                <a class="nav-link" href="about">about</a>
+				            </li>
+				        </ul>
+				    </div>
+				</nav>
+			</div>
+		</div>
+
+
+<!-- CONTENT -->
+		<div class = "container" style="overflow:hidden; height:70%;">
+
+<br>
+<h3> About </h3>
+This project uses basic natural language processing to generate semi-plausible lyrics for a given artist.
+<br>
+<br>
+
+<h3> How it works </h3>
+Enter an artist. The algorithm scrapes the top 10 most popular songs for that artist using the <a href = "https://github.com/johnwmillr/LyricsGenius">RapGenius API</a>. 
+
+Then, the algorithm divides the input lyrics into k-grams, and for each k-gram, forms a frequency table for the following character.
+<br>
+<br>
+When generating new lyrics, the algorithm looks at the current k-gram and selects a random character based off the weighted distribution of the frequency table.
+<br>
+<br>
+The algorithm incorporates the character into the next k-gram and repeats the process.
+<br>
+<br>
+Called a Markov chain, the algorithm produces long strings of semi-believable text.
+<br>
+<br>
+<i>Find the GitHub for the code <a href = "https://github.com/soniajoseph/MarkovLyric2">here</a>. </i>
+<br>
+<br>
+
+<h3> Project Design </h3>
+I coded the Markov chain in Python and hosted it on Heroku with the Flask micro web framework. I wrote a CSS/HTML/JavaScript GUI to mimic the effect of the Terminal when originally testing the algorithm. For the animation I used the <a href = "https://github.com/mattboldt/typed.js/">Typed.js library</a>.
+<br>
+<br>
+A version that is a simple text generator, where you can enter your own input without the RapGenius API, is found <a href="https://generatetext.herokuapp.com/">here</a>.
+<br>
+<br>
+For more projects, go <a href="https://soniajoseph.github.io/projects">here</a>. 
+
+
+</div>
+
+       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+
+
+<style>
+html, body {
+	height: 100%;
+}
+.content-wrapper {
+	position: absolute;
+    overflow-y: auto;
+}
+.fixed-row-bottom { 
+	position: absolute; 
+	bottom: 40px;
+}
+.footer { 
+	position: absolute;
+	bottom: 0px;
+}
+p, span {
+  color: black;
+  fontSize: 35px;
+  lineHeight: 36px;
+  textAlign: center;
+  font-family: "Courier New";
+  letterSpacing: 1.2em;
+  paddingLeft: 1.2em;
+  font-weight: 600;
+}
+</style>
+
+
+
+
+</html>
