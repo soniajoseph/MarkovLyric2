@@ -22,9 +22,7 @@ Try it out for yourself with [text](https://generatetext.herokuapp.com/) or [lyr
 
 I coded the Markov chain in Python and hosted it on Heroku with the Flask micro web framework. I wrote a CSS/HTML/JavaScript GUI to mimic the effect of the Terminal when originally testing the algorithm. For the animation I used the [Typed.js library](https://github.com/mattboldt/typed.js/).
 
-Because the output was especially amusing for song lyrics, I connected it to the [RapGenius API](https://genius.com/developers). 
-
-For Lyric Generator, you enter the name of an artist. The algorithm scrapes the artist's 10 most popular songs from RapGenius and produces a pseudo-random song.
+Because the output was especially amusing for song lyrics, I connected it to the [RapGenius API](https://genius.com/developers). For Lyric Generator, you enter the name of an artist. The algorithm scrapes the artist's 10 most popular songs from RapGenius and produces a pseudo-random song.
 
 The GitHub repo for the text generator, without the RapGenius API, is [here](https://github.com/soniajoseph/MarkovLyric).
 
